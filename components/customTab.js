@@ -8,7 +8,7 @@ function CustomTab({navigation}) {
     <View style={styles.tabar}>
       <Pressable
         style={styles.container}
-        onPress={() => navigation.push('Login')}>
+        onPress={() => navigation.push('Create Account')}>
         <Ionicons name="home-outline" size={23} color="#C3C4CA" />
         <Text style={styles.text}>Home</Text>
       </Pressable>

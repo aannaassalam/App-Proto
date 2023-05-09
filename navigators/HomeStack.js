@@ -6,6 +6,7 @@ import {
 import Navbar from '../components/navbar';
 import TabNavigator from './TabNavigator';
 import Login from '../screen/login';
+import CreateAccount from '../screen/createAccount';
 
 const Stack = createStackNavigator();
 
@@ -16,6 +17,14 @@ export default function HomeStack() {
       <Stack.Screen
         name="Login"
         component={Login}
+        options={{
+          headerShown: false,
+          cardStyleInterpolator: CardStyleInterpolators.forModalPresentationIOS,
+        }}
+      />
+      <Stack.Screen
+        name="Create Account"
+        component={CreateAccount}
         options={{
           headerShown: false,
           cardStyleInterpolator: CardStyleInterpolators.forModalPresentationIOS,

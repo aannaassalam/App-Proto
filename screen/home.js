@@ -5,6 +5,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import HallOfFame from '../components/home/hallOfFame';
 import Photos from '../components/home/photos';
 import Follow from '../components/home/follow';
+import Music from '../components/music';
+import Entypo from 'react-native-vector-icons/Entypo';
+import ShopMerch from '../components/shopMerch';
 
 export default function Home() {
   const scroll = useRef(new Animated.Value(0)).current;
@@ -45,6 +48,8 @@ export default function Home() {
       <View style={styles.container}>
         <HallOfFame />
         <Photos />
+        <Music />
+        <ShopMerch />
         <Follow />
       </View>
     </Animated.ScrollView>

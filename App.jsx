@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import RootNavigator from './navigators/RootNavigator';
 import HomeStack from './navigators/HomeStack';

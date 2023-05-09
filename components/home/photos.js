@@ -1,41 +1,55 @@
 import React from 'react';
-import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
+import {
+  FlatList,
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Photo = ({image}) => {
   return (
-    <View style={styles.photo}>
-      <LinearGradient
-        colors={['#00000060', 'transparent', '#00000060']}
-        start={{x: 0, y: 0}}
-        end={{x: 0, y: 1}}
-        style={{
-          width: '100%',
-          height: '100%',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          zIndex: 2,
-        }}></LinearGradient>
-      <Image source={image} style={styles.image} />
-      {/* <View
+    <View style={{width: 145, marginRight: 20}}>
+      <TouchableOpacity style={styles.photo}>
+        <LinearGradient
+          colors={['#00000060', 'transparent', '#00000060']}
+          start={{x: 0, y: 0}}
+          end={{x: 0, y: 1}}
+          style={{
+            width: 145,
+            height: 200,
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            zIndex: 2,
+          }}></LinearGradient>
+        <Image source={image} style={styles.image} />
+        {/* <View
         colors={['#00000080', 'transparent']}
         start={{x: 0, y: 0}}
         end={{x: 0, y: 1}}
         > */}
-      <Entypo
-        name="dots-three-vertical"
-        color="#fff"
-        size={16}
-        style={styles.topIcon}
-      />
-      {/* </View> */}
-      <View style={styles.bottomText}>
-        <Ionicons name="ios-eye-sharp" color="#fff" size={18} />
-        <Text style={styles.viewsText}>320K</Text>
-      </View>
+        <Entypo
+          name="dots-three-vertical"
+          color="#fff"
+          size={16}
+          style={styles.topIcon}
+        />
+        {/* </View> */}
+        <View style={styles.bottomText}>
+          <Ionicons name="ios-eye-sharp" color="#fff" size={18} />
+          <Text style={styles.viewsText}>320K</Text>
+        </View>
+      </TouchableOpacity>
+      <Text
+        numberOfLines={2}
+        style={{marginTop: 15, color: '#000', fontFamily: 'Poppins-Medium'}}>
+        Performing his new song for the first time in history
+      </Text>
     </View>
   );
 };
@@ -64,7 +78,7 @@ export default function Photos() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: 40,
+    paddingVertical: 30,
   },
   header: {
     fontSize: 25,
@@ -79,11 +93,11 @@ const styles = StyleSheet.create({
     position: 'relative',
     borderRadius: 10,
     overflow: 'hidden',
-    marginRight: 20,
+    // marginRight: 20,
   },
   image: {
-    width: '100%',
-    height: '100%',
+    width: 145,
+    height: 200,
     resizeMode: 'cover',
   },
   topIcon: {
