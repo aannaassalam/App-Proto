@@ -3,10 +3,12 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Octicons from 'react-native-vector-icons/Octicons';
 
 import {View, Text, StyleSheet, Pressable} from 'react-native';
-function CustomTab() {
+function CustomTab({navigation}) {
   return (
     <View style={styles.tabar}>
-      <Pressable style={styles.container}>
+      <Pressable
+        style={styles.container}
+        onPress={() => navigation.push('Login')}>
         <Ionicons name="home-outline" size={23} color="#C3C4CA" />
         <Text style={styles.text}>Home</Text>
       </Pressable>
@@ -44,8 +46,6 @@ function CustomTab() {
 }
 const styles = StyleSheet.create({
   tabar: {
-    position: 'absolute',
-    bottom: 0,
     width: '100%',
     height: 70,
     backgroundColor: '#222328',
