@@ -203,6 +203,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     alignItems: 'flex-start',
     marginVertical: 80,
+    // backgroundColor: '#fffeff',
   },
   transform: {
     transform: [{translateX: -200}],

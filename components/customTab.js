@@ -4,15 +4,22 @@ import Octicons from 'react-native-vector-icons/Octicons';
 
 import {View, Text, StyleSheet, Pressable} from 'react-native';
 function CustomTab() {
+  const [tab, settab] = React.useState(0);
+  let col = tab === 0 ? '#2A2A2C' : '#c3c4ca';
+  let textCol = tab === 0 ? '#2A2A2C' : '#c3c4ca';
   return (
-    <View style={styles.tabar}>
-      <Pressable style={styles.container}>
-        <Ionicons name="home-outline" size={23} color="#C3C4CA" />
-        <Text style={styles.text}>Home</Text>
+    <View
+      style={{
+        ...styles.tabar,
+        backgroundColor: tab === 0 ? '#fefefe' : '#222328',
+      }}>
+      <Pressable style={styles.container} onPress={() => settab(0)}>
+        <Ionicons name="home-outline" size={23} color={col} />
+        <Text style={{...styles.text, color: textCol}}>Home</Text>
       </Pressable>
       <Pressable style={styles.container}>
-        <Ionicons name="film-outline" size={23} color="#C3C4CA" />
-        <Text style={styles.text}>Videos</Text>
+        <Ionicons name="film-outline" size={23} color={col} />
+        <Text style={{...styles.text, color: textCol}}>Videos</Text>
       </Pressable>
       <Pressable
         style={{
@@ -31,13 +38,13 @@ function CustomTab() {
           />
         </View>
       </Pressable>
-      <Pressable style={styles.container}>
-        <Octicons name="stack" size={23} color="#C3C4CA" />
-        <Text style={styles.text}>Photos</Text>
+      <Pressable style={styles.container} onPress={() => settab(4)}>
+        <Octicons name="stack" size={23} color={col} />
+        <Text style={{...styles.text, color: textCol}}>Photos</Text>
       </Pressable>
       <Pressable style={styles.container}>
-        <Ionicons name="musical-notes" size={23} color="#C3C4CA" />
-        <Text style={styles.text}>Music</Text>
+        <Ionicons name="musical-notes" size={23} color={col} />
+        <Text style={{...styles.text, color: textCol}}>Music</Text>
       </Pressable>
     </View>
   );
@@ -48,7 +55,6 @@ const styles = StyleSheet.create({
     bottom: 0,
     width: '100%',
     height: 70,
-    backgroundColor: '#222328',
     alignItems: 'center',
     justifyContent: 'space-around',
     flexDirection: 'row',

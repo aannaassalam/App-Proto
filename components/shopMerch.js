@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#faf8fb',
     paddingVertical: 50,
-    marginBottom: 50,
+    marginBottom: 30,
   },
   scroll: {
     paddingHorizontal: 10,
