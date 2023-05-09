@@ -1,6 +1,8 @@
 import React, {useRef} from 'react';
-import {View, Animated, StyleSheet, Text} from 'react-native';
+import {View, Animated, StyleSheet, Text, Image} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Entypo from 'react-native-vector-icons/Entypo';
 
 export default function Home() {
   const scroll = useRef(new Animated.Value(0)).current;
@@ -15,7 +17,11 @@ export default function Home() {
           style={styles.banner(scroll)}
           source={require('../assets/polo-g-hero.png')}
         />
-        <View style={styles.heroSection}>
+        <LinearGradient
+          colors={['#ffffff', 'transparent']}
+          start={{x: 0, y: 1}}
+          end={{x: 0, y: 0}}
+          style={styles.heroSection}>
           <Text style={styles.headerText}>Polo G</Text>
           <View style={styles.actionButtons}>
             <Ionicons
@@ -31,64 +37,36 @@ export default function Home() {
               style={{...styles.icon, backgroundColor: '#109fd9'}}
             />
           </View>
+        </LinearGradient>
+      </View>
+      <View style={styles.container}>
+        <View style={styles.hall_of_fame}>
+          <Image
+            source={require('../assets/polo-g-hall-of-fame.jpg')}
+            style={styles.hall_of_fame_image}
+            resizeMode="contain"
+          />
+          <View style={styles.hall_of_fame_details}>
+            <Text
+              style={{
+                ...styles.hall_of_fame_text,
+                color: '#000',
+                // fontFamily: 'Poppins-Regular',
+                fontSize: 16,
+              }}>
+              Hall of Fame
+            </Text>
+            <Text style={styles.hall_of_fame_text}>3 December, 2022</Text>
+            <Text style={styles.hall_of_fame_text}>12 songs</Text>
+          </View>
+          <Entypo
+            name="dots-three-horizontal"
+            size={25}
+            color="#555"
+            style={{marginRight: 15}}
+          />
         </View>
       </View>
-      <Text>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste facilis,
-        dignissimos quos enim quis ea, ut quibusdam odit alias modi qui ducimus
-        explicabo adipisci nihil soluta veritatis cumque nemo, ad quidem neque.
-        Recusandae, repudiandae nemo. Harum, accusamus consectetur quia corrupti
-        nihil ipsam tenetur nisi doloribus, rem placeat sequi. Ad dignissimos
-        tempore impedit iusto sit quia saepe tempora dicta soluta, pariatur,
-        illum accusantium ea itaque! Placeat necessitatibus eius dolorem
-        molestiae eveniet minus accusantium a illum, expedita omnis excepturi
-        ipsa nesciunt. Quasi eius, corporis cupiditate cumque provident ipsum
-        iste, consectetur commodi tempore quisquam esse aspernatur tenetur
-        deserunt nulla suscipit? Dolore neque facilis ullam quasi animi.
-        Assumenda quod, error libero iste nihil quasi quis minus tempore ut non
-        temporibus expedita, accusamus officia quo obcaecati voluptas ea!
-        Ratione autem veniam neque illo doloribus magni quo. Libero voluptate
-        quasi excepturi beatae nesciunt dolorum provident id atque ea officia
-        illo, enim ipsum modi architecto necessitatibus officiis. Cumque ab
-        quasi laborum minima facere quae saepe eveniet explicabo, cupiditate
-        molestiae blanditiis natus quos molestias repudiandae fugiat ullam nobis
-        dignissimos delectus ducimus ipsum officia debitis. Quae molestiae
-        voluptate incidunt mollitia corrupti, delectus ipsum quisquam.
-        Repellendus, sunt harum magni debitis voluptas voluptates nesciunt
-        accusantium aut facilis, qui distinctio illum nemo natus delectus
-        mollitia recusandae! Non odit veritatis quod. Officiis fuga officia
-        alias facilis! Similique temporibus voluptatum molestiae hic.
-        Reprehenderit perspiciatis totam molestiae fuga ratione eligendi iste at
-        nesciunt quasi beatae dolore rem magnam magni, hic vel doloremque esse
-        alias pariatur odit! Tempora expedita sit nobis molestias voluptates ad
-        dolorum eos! Deserunt repellat, dolore incidunt vitae molestias, omnis
-        natus accusamus mollitia minima illum provident ratione eligendi, ea
-        fugiat facere laborum quasi? Eligendi nulla unde temporibus perspiciatis
-        ab. Error non voluptatum nemo fugit commodi ipsa ad deleniti mollitia,
-        odit quam corrupti accusantium iste facere. Unde, eum! Dolorem, facere
-        fugit! Quos ipsum unde consectetur quae? Placeat atque minima ratione
-        ipsa, nulla expedita, amet quo unde corrupti voluptatem officiis quam
-        voluptas et, maxime delectus molestias? Tempora repellat, dolores
-        possimus ipsam hic inventore numquam ea facere tempore cum! Iure, nisi.
-        Beatae ex aliquid nostrum aspernatur earum repellendus molestias natus
-        minus, ea cumque praesentium tempora fugit qui soluta dolore facere
-        deleniti nesciunt deserunt porro voluptatem voluptates aliquam, ut
-        doloremque. Illum blanditiis non molestiae laudantium, dolor autem
-        excepturi aperiam et nisi? Earum maxime eum harum alias? Nobis quisquam
-        corporis illum itaque odio ullam alias labore adipisci id nesciunt
-        incidunt nisi, quia hic laudantium veniam? Labore deserunt error neque
-        eius fugit autem sapiente dignissimos officiis vitae, inventore
-        veritatis earum voluptatibus praesentium, iusto illo a! Iure nisi enim
-        obcaecati voluptatem officiis molestias corrupti odio ipsam quos illo,
-        hic recusandae aspernatur velit eius atque repellat perferendis officia
-        animi quas aliquam tempore saepe inventore nostrum. Libero aut fugiat
-        tempore perspiciatis quaerat magni illo voluptates minus dolorem quas
-        eius molestias, quo architecto expedita! Vel ipsam officiis perferendis
-        distinctio, fuga possimus ducimus harum! Expedita culpa amet praesentium
-        consequuntur architecto odio aliquam nisi. Nam, quibusdam voluptatum
-        neque sequi voluptas, mollitia delectus, deserunt eos expedita
-        asperiores ipsum qui dolor quos voluptatibus illum. Dicta, odit quam.
-      </Text>
     </Animated.ScrollView>
   );
 }
@@ -115,19 +93,22 @@ const styles = StyleSheet.create({
       inputRange: [0, 510],
       outputRange: [1, 0.7],
     }),
+    marginTop: 50,
   }),
   heroSection: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: '#ffffff',
-    marginTop: -75,
+    // backgroundColor: '#ffffff',
+    marginTop: -120,
     padding: 15,
+    paddingTop: 50,
   },
   headerText: {
     fontSize: 35,
     color: '#000',
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
+    // fontWeight: '700',
   },
   actionButtons: {
     flexDirection: 'row',
@@ -136,9 +117,33 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderRadius: 50,
     overflow: 'hidden',
+    backgroundColor: '#fff',
   },
   icon: {
     paddingVertical: 10,
     paddingHorizontal: 20,
+  },
+  container: {
+    paddingHorizontal: 15,
+    backgroundColor: '#fffeff',
+  },
+  hall_of_fame: {
+    flexDirection: 'row',
+    backgroundColor: '#f5f3f5',
+    alignItems: 'center',
+  },
+  hall_of_fame_image: {
+    width: 110,
+    height: 110,
+  },
+  hall_of_fame_details: {
+    padding: 15,
+    marginRight: 'auto',
+  },
+  hall_of_fame_text: {
+    // marginBottom: 3,
+    color: '#555',
+    fontFamily: 'Poppins-Medium',
+    fontSize: 14,
   },
 });
