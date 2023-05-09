@@ -11,10 +11,12 @@ import LinearGradient from 'react-native-linear-gradient';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const Photo = ({image}) => {
+const Photo = ({image, navigation}) => {
   return (
     <View style={{width: 145, marginRight: 20}}>
-      <TouchableOpacity style={styles.photo}>
+      <TouchableOpacity
+        style={styles.photo}
+        onPress={() => navigation.navigate('photos')}>
         <LinearGradient
           colors={['#00000060', 'transparent', '#00000060']}
           start={{x: 0, y: 0}}
@@ -54,7 +56,7 @@ const Photo = ({image}) => {
   );
 };
 
-export default function Photos() {
+export default function Photos({navigation}) {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Photos</Text>
@@ -67,7 +69,7 @@ export default function Photos() {
           require('../../assets/polo-g-photos-5.jpg'),
         ]}
         key={({item}) => item}
-        renderItem={({item}) => <Photo image={item} />}
+        renderItem={({item}) => <Photo image={item} navigation={navigation} />}
         horizontal
         showsHorizontalScrollIndicator={false}
         style={{paddingHorizontal: 15}}

@@ -30,6 +30,7 @@ function ShopMerch() {
           [tshirt3, tshirt4],
           [tshirt5, tshirt6],
           [tshirt1, tshirt2],
+          [tshirt3, tshirt4],
         ].map((arr, id) => (
           <View key={id}>
             <TouchableOpacity activeOpacity={0.5} style={styles.card}>

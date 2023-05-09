@@ -12,7 +12,7 @@ const Stack = createStackNavigator();
 
 export default function HomeStack() {
   return (
-    <Stack.Navigator screenOptions={{header: Navbar, headerTransparent: true}}>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="TabScreen" component={TabNavigator} />
       <Stack.Screen
         name="Login"

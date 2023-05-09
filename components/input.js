@@ -5,7 +5,11 @@ export default function Input({label, placeholder = '', forgot}) {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>{label}</Text>
-      <TextInput style={styles.input} placeholder={placeholder} />
+      <TextInput
+        style={styles.input}
+        placeholder={placeholder}
+        placeholderTextColor="#ccc"
+      />
       {forgot && <Text style={styles.forgot}>Forgot Password?</Text>}
     </View>
   );

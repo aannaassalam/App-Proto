@@ -3,18 +3,25 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Octicons from 'react-native-vector-icons/Octicons';
 
 import {View, Text, StyleSheet, Pressable} from 'react-native';
-function CustomTab({navigation}) {
+function CustomTab({state, navigation}) {
+  let col = state.index === 0 ? '#2A2A2C' : '#c3c4ca';
+  let textCol = state.index === 0 ? '#2A2A2C' : '#c3c4ca';
+
   return (
-    <View style={styles.tabar}>
+    <View
+      style={{
+        ...styles.tabar,
+        backgroundColor: state.index === 0 ? '#fefefe' : '#222328',
+      }}>
       <Pressable
         style={styles.container}
-        onPress={() => navigation.push('Create Account')}>
-        <Ionicons name="home-outline" size={23} color="#C3C4CA" />
-        <Text style={styles.text}>Home</Text>
+        onPress={() => navigation.navigate('home')}>
+        <Ionicons name="home-outline" size={20} color={col} />
+        <Text style={{...styles.text, color: textCol}}>Home</Text>
       </Pressable>
       <Pressable style={styles.container}>
-        <Ionicons name="film-outline" size={23} color="#C3C4CA" />
-        <Text style={styles.text}>Videos</Text>
+        <Ionicons name="film-outline" size={20} color={col} />
+        <Text style={{...styles.text, color: textCol}}>Videos</Text>
       </Pressable>
       <Pressable
         style={{
@@ -33,13 +40,15 @@ function CustomTab({navigation}) {
           />
         </View>
       </Pressable>
-      <Pressable style={styles.container}>
-        <Octicons name="stack" size={23} color="#C3C4CA" />
-        <Text style={styles.text}>Photos</Text>
+      <Pressable
+        style={styles.container}
+        onPress={() => navigation.navigate('photos')}>
+        <Octicons name="stack" size={20} color={col} />
+        <Text style={{...styles.text, color: textCol}}>Photos</Text>
       </Pressable>
       <Pressable style={styles.container}>
-        <Ionicons name="musical-notes" size={23} color="#C3C4CA" />
-        <Text style={styles.text}>Music</Text>
+        <Ionicons name="musical-notes" size={20} color={col} />
+        <Text style={{...styles.text, color: textCol}}>Music</Text>
       </Pressable>
     </View>
   );
@@ -48,10 +57,11 @@ const styles = StyleSheet.create({
   tabar: {
     width: '100%',
     height: 70,
-    backgroundColor: '#222328',
     alignItems: 'center',
     justifyContent: 'space-around',
     flexDirection: 'row',
+    borderTopWidth: 1,
+    borderTopColor: '#eee',
   },
   container: {
     flexDirection: 'column',
@@ -59,7 +69,8 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#C3C4Ca',
-    marginTop: 5,
+    marginTop: 3,
+    fontSize: 12,
   },
   videoButtton: {
     backgroundColor: '#454A53',

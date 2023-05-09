@@ -234,7 +234,7 @@ const styles = StyleSheet.create({
   inactive: {
     color: '#959295',
     marginRight: 20,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: '600',
     paddingBottom: 10,
     fontFamily: 'Poppins-Medium',
@@ -259,7 +259,7 @@ const styles = StyleSheet.create({
   details: {
     position: 'relative',
     // flex: 1,
-    width: '65.5%',
+    width: '63%',
   },
   line: {
     width: '100%',
@@ -277,7 +277,7 @@ const styles = StyleSheet.create({
   },
   desc: {
     color: '#959295',
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: '600',
     fontFamily: 'Poppins-SemiBold',
   },
