@@ -1,6 +1,7 @@
 import React, {useRef} from 'react';
 import {View, Animated, StyleSheet, Text} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Music from '../components/music';
 
 export default function Home() {
   const scroll = useRef(new Animated.Value(0)).current;
@@ -89,6 +90,7 @@ export default function Home() {
         neque sequi voluptas, mollitia delectus, deserunt eos expedita
         asperiores ipsum qui dolor quos voluptatibus illum. Dicta, odit quam.
       </Text>
+      <Music />
     </Animated.ScrollView>
   );
 }
