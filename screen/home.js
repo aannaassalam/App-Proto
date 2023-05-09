@@ -4,6 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Music from '../components/music';
 import Entypo from 'react-native-vector-icons/Entypo';
+import ShopMerch from '../components/shopMerch';
 
 export default function Home() {
   const scroll = useRef(new Animated.Value(0)).current;
@@ -18,7 +19,7 @@ export default function Home() {
           style={styles.banner(scroll)}
           source={require('../assets/polo-g-hero.png')}
         />
-        <LinearGradient
+        {/* <LinearGradient
           colors={['#ffffff', 'transparent']}
           start={{x: 0, y: 1}}
           end={{x: 0, y: 0}}
@@ -38,7 +39,7 @@ export default function Home() {
               style={{...styles.icon, backgroundColor: '#109fd9'}}
             />
           </View>
-        </LinearGradient>
+        </LinearGradient> */}
       </View>
       <View style={styles.container}>
         <View style={styles.hall_of_fame}>
@@ -68,6 +69,8 @@ export default function Home() {
           />
         </View>
       </View>
+      <Music />
+      <ShopMerch />
     </Animated.ScrollView>
   );
 }

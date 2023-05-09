@@ -7,6 +7,8 @@ import music21 from '../assets/poloGmusic2-1.jpg';
 import music22 from '../assets/poloGmusic2-2.jpg';
 import music23 from '../assets/poloGmusic2-3.jpg';
 import music24 from '../assets/poloGmusic2-4.jpg';
+import Feather from 'react-native-vector-icons/Feather';
+
 import music25 from '../assets/poloGmusic2-5.jpg';
 import Animated, {
   useSharedValue,
@@ -36,12 +38,11 @@ const MusicCard = ({img, name, desc, duration}) => {
     </View>
   );
 };
-
 function Music() {
   const [moveValue, setmoveValue] = useState(0);
   const [active, setactive] = useState(0);
   const list1Offset = useSharedValue(0);
-  const list2Offset = useSharedValue(0);
+  const list2Offset = useSharedValue(-200);
   const list1Opacity = useSharedValue(1);
   const list2Opacity = useSharedValue(0);
   const width = event => {
@@ -67,19 +68,18 @@ function Music() {
       <View style={styles.tabs}>
         <Pressable
           onPress={() => {
+            list2Offset.value = withTiming(-200, {
+              duration: 500,
+            });
             list1Offset.value = withTiming(0, {
-              duration: 300,
-            });
-            list2Offset.value = withTiming(0, {
-              duration: 300,
-            });
-            list1Opacity.value = withTiming(1, {
-              duration: 200,
+              duration: 500,
             });
             list2Opacity.value = withTiming(0, {
-              duration: 200,
+              duration: 400,
             });
-            setactive(1);
+            list1Opacity.value = withTiming(1, {
+              duration: 400,
+            });
             setactive(0);
           }}>
           <Text style={active === 0 ? styles.tabText : styles.inactive}>
@@ -88,17 +88,17 @@ function Music() {
         </Pressable>
         <Pressable
           onPress={() => {
-            list1Offset.value = withTiming(-50, {
-              duration: 200,
+            list1Offset.value = withTiming(-200, {
+              duration: 500,
             });
             list2Offset.value = withTiming(-moveValue, {
-              duration: 300,
+              duration: 500,
             });
             list1Opacity.value = withTiming(0, {
-              duration: 200,
+              duration: 400,
             });
             list2Opacity.value = withTiming(1, {
-              duration: 200,
+              duration: 400,
             });
             setactive(1);
           }}>
@@ -144,7 +144,7 @@ function Music() {
             duration="3:00"
           />
         </Animated.View>
-        <Animated.View style={[styles.list, animatedStyles2]}>
+        <Animated.View style={[styles.list, animatedStyles2, styles.transform]}>
           <MusicCard
             name="Polo G"
             img={music21}
@@ -171,11 +171,29 @@ function Music() {
           />
           <MusicCard
             name="DDG ft."
-            img={music22}
+            img={music25}
             desc="DDG ft. Polo G & NLE Chopp.."
             duration="2:55"
           />
         </Animated.View>
+      </View>
+      <View
+        style={{
+          marginTop: 30,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          width: '100%',
+          alignItems: 'center',
+        }}>
+        <Text
+          style={{
+            ...styles.name,
+            fontSize: 18,
+            fontFamily: 'Poppins-SemiBold',
+          }}>
+          More Music
+        </Text>
+        <Feather name="chevron-right" size={30} color="#959295" />
       </View>
     </View>
   );
@@ -186,32 +204,38 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     marginVertical: 80,
   },
+  transform: {
+    transform: [{translateX: -200}],
+  },
   heading: {
     color: '#161415',
-    fontSize: 30,
+    fontSize: 25,
+    fontFamily: 'Poppins-SemiBold',
     fontWeight: '600',
   },
   tabs: {
-    marginTop: 15,
+    marginTop: 10,
     flexDirection: 'row',
     marginBottom: 10,
   },
   tabText: {
     color: '#252525',
     marginRight: 20,
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: '600',
     paddingBottom: 10,
     borderBottomColor: '#109fd9',
+    fontFamily: 'Poppins-Medium',
     borderBottomWidth: 1,
     // transform: [{translateX: '100%'}],
   },
   inactive: {
     color: '#959295',
     marginRight: 20,
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: '600',
     paddingBottom: 10,
+    fontFamily: 'Poppins-Medium',
   },
   list: {
     alignItems: 'flex-start',
@@ -238,20 +262,21 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 1.5,
     position: 'absolute',
-    bottom: -17,
+    bottom: -10,
     right: 0,
     backgroundColor: '#95929550',
   },
   name: {
     color: '#252525',
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: '600',
-    paddingBottom: 2,
+    fontFamily: 'Poppins-SemiBold',
   },
   desc: {
     color: '#959295',
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
   },
 });
 export default Music;
