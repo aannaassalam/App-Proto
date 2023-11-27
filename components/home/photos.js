@@ -6,6 +6,7 @@ import {
   Text,
   View,
   TouchableOpacity,
+  ImageBackground,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -16,8 +17,9 @@ const Photo = ({image, navigation}) => {
     <View style={{width: 145, marginRight: 20}}>
       <TouchableOpacity
         style={styles.photo}
-        onPress={() => navigation.navigate('photos')}>
-        <LinearGradient
+        // onPress={() => navigation.navigate('photos')}
+        activeOpacity={1}>
+        {/* <LinearGradient
           colors={['#00000060', 'transparent', '#00000060']}
           start={{x: 0, y: 0}}
           end={{x: 0, y: 1}}
@@ -28,8 +30,8 @@ const Photo = ({image, navigation}) => {
             top: 0,
             left: 0,
             zIndex: 2,
-          }}></LinearGradient>
-        <Image source={image} style={styles.image} />
+          }}></LinearGradient> */}
+        {/* <Image source={image} style={styles.image} /> */}
         {/* <View
         colors={['#00000080', 'transparent']}
         start={{x: 0, y: 0}}
@@ -47,11 +49,11 @@ const Photo = ({image, navigation}) => {
           <Text style={styles.viewsText}>320K</Text>
         </View>
       </TouchableOpacity>
-      <Text
+      {/* <Text
         numberOfLines={2}
         style={{marginTop: 15, color: '#000', fontFamily: 'Poppins-Medium'}}>
         Performing his new song for the first time in history
-      </Text>
+      </Text> */}
     </View>
   );
 };
@@ -59,7 +61,8 @@ const Photo = ({image, navigation}) => {
 export default function Photos({navigation}) {
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Photos</Text>
+      <Text style={styles.header}>Statistics</Text>
+
       <FlatList
         data={[
           require('../../assets/polo-g-photos-1.jpg'),
@@ -93,8 +96,11 @@ const styles = StyleSheet.create({
     height: 200,
     width: 145,
     position: 'relative',
-    borderRadius: 10,
+    borderRadius: 25,
     overflow: 'hidden',
+    backgroundColor: '#fff',
+    borderColor: '#ddd',
+    borderWidth: 2,
     // marginRight: 20,
   },
   image: {

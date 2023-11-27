@@ -40,27 +40,29 @@ export default function Home({navigation}) {
         <View style={styles.bannerContainer}>
           <Animated.Image
             style={styles.banner(scroll, height)}
-            source={require('../assets/polo-g-hero.png')}
+            source={require('../assets/kate.png')}
           />
           <LinearGradient
             colors={['#ffffff', 'transparent']}
             start={{x: 0, y: 1}}
             end={{x: 0, y: 0}}
             style={styles.heroSection}>
-            <Text style={styles.headerText}>Polo G</Text>
+            <Text style={styles.headerText}>Helena</Text>
             <View style={styles.actionButtons}>
-              <Ionicons
-                name="ios-shuffle"
-                size={25}
-                color="#000"
-                style={styles.icon}
-              />
-              <Ionicons
-                name="play"
-                size={25}
-                color="#fff"
-                style={{...styles.icon, backgroundColor: '#109fd9'}}
-              />
+              <View style={styles.rating}>
+                <Text style={styles.rating_text}>4.0</Text>
+              </View>
+              <LinearGradient
+                colors={['#7666c5', '#9c8bde']}
+                start={{x: 1, y: 1}}
+                end={{x: 0, y: 0}}>
+                <Ionicons
+                  name="star"
+                  size={25}
+                  color="#fff"
+                  style={{...styles.icon}}
+                />
+              </LinearGradient>
             </View>
           </LinearGradient>
         </View>
@@ -108,7 +110,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    // backgroundColor: '#ffffff',
+    // backgroundColor: '#f2f3e7',
     marginTop: -120,
     padding: 15,
     paddingTop: 50,
@@ -121,7 +123,7 @@ const styles = StyleSheet.create({
   },
   actionButtons: {
     flexDirection: 'row',
-    borderColor: '#109fd9',
+    borderColor: '#7666c5',
     borderWidth: 2,
     borderStyle: 'solid',
     borderRadius: 50,
@@ -135,5 +137,19 @@ const styles = StyleSheet.create({
   container: {
     // paddingHorizontal: 15,
     backgroundColor: '#fffeff',
+  },
+  rating: {
+    paddingHorizontal: 10,
+    paddingLeft: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  rating_text: {
+    fontSize: 20,
+    fontWeight: 700,
+    color: '#333',
+  },
+  bannerContainer: {
+    backgroundColor: '#f2f3e7',
   },
 });
