@@ -157,9 +157,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(246, 177, 158, 0.2)',
   },
   caption: {
-    color: '#909090',
+    color: '#f45536',
     fontSize: 16,
     marginTop: -10,
-    fontFamily: 'Poppins-Medium',
+    fontFamily: 'Poppins-SemiBold',
   },
 });
