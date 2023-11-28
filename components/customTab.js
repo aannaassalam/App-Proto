@@ -20,35 +20,24 @@ function CustomTab({state, navigation}) {
         <Text style={{...styles.text, color: textCol}}>Home</Text>
       </Pressable>
       <Pressable style={styles.container}>
-        <Ionicons name="film-outline" size={20} color={col} />
-        <Text style={{...styles.text, color: textCol}}>Videos</Text>
+        <Ionicons name="location-outline" size={20} color={col} />
+        <Text style={{...styles.text, color: textCol}}>Maps</Text>
       </Pressable>
-      <Pressable
-        style={{
-          ...styles.container,
-          padding: 4,
-          borderColor: '#454A53',
-          borderRadius: 999,
-          borderWidth: 1,
-        }}>
-        <View style={styles.videoButtton}>
-          <Ionicons
-            name="play"
-            size={30}
-            color="#F9F8FF"
-            style={{position: 'relative', left: 2}}
-          />
-        </View>
+      <Pressable style={styles.container}>
+        <Ionicons name="stats-chart-outline" size={20} color={col} />
+        <Text style={{...styles.text, color: textCol}}>Dashboard</Text>
       </Pressable>
       <Pressable
         style={styles.container}
-        onPress={() => navigation.navigate('photos')}>
-        <Octicons name="stack" size={20} color={col} />
-        <Text style={{...styles.text, color: textCol}}>Photos</Text>
+        onPress={() => navigation.navigate('reviews')}>
+        <Octicons name="star" size={20} color={col} />
+        <Text style={{...styles.text, color: textCol}}>Get Reviews</Text>
       </Pressable>
-      <Pressable style={styles.container}>
-        <Ionicons name="musical-notes" size={20} color={col} />
-        <Text style={{...styles.text, color: textCol}}>Music</Text>
+      <Pressable
+        style={styles.container}
+        onPress={() => navigation.navigate('settingsStack')}>
+        <Ionicons name="settings-outline" size={20} color={col} />
+        <Text style={{...styles.text, color: textCol}}>Settings</Text>
       </Pressable>
     </View>
   );
