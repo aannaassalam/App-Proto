@@ -3,6 +3,7 @@ import Settings from './settings';
 import MyPlans from './myPlans';
 import GetReviews from './getReviews';
 import {createStackNavigator} from '@react-navigation/stack';
+import ManageReviews from './manageReviews';
 
 function SettingsStack() {
   const Stack = createStackNavigator();
@@ -21,7 +22,7 @@ function SettingsStack() {
       />
       <Stack.Screen
         name="reviews"
-        component={GetReviews}
+        component={ManageReviews}
         options={{
           headerShown: false,
         }}

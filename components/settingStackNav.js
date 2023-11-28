@@ -36,9 +36,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginVertical: 15,
+    marginVertical: 10,
     margin: 5,
     marginBottom: 10,
+    backgroundColor: 'transparent',
   },
   heading: {
     fontSize: 18,
