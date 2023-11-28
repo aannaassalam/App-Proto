@@ -12,48 +12,25 @@ import LinearGradient from 'react-native-linear-gradient';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const Photo = ({image, navigation}) => {
+const Photo = ({item, navigation}) => {
   return (
     <View style={{width: 145, marginRight: 20}}>
       <TouchableOpacity
         style={styles.photo}
         // onPress={() => navigation.navigate('photos')}
         activeOpacity={1}>
-        {/* <LinearGradient
-          colors={['#00000060', 'transparent', '#00000060']}
-          start={{x: 0, y: 0}}
-          end={{x: 0, y: 1}}
-          style={{
-            width: 145,
-            height: 200,
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            zIndex: 2,
-          }}></LinearGradient> */}
-        {/* <Image source={image} style={styles.image} /> */}
-        {/* <View
-        colors={['#00000080', 'transparent']}
-        start={{x: 0, y: 0}}
-        end={{x: 0, y: 1}}
-        > */}
         <Entypo
           name="dots-three-vertical"
           color="#fff"
           size={16}
           style={styles.topIcon}
         />
-        {/* </View> */}
+        <Image source={item.image} style={styles.image} />
         <View style={styles.bottomText}>
-          <Ionicons name="ios-eye-sharp" color="#fff" size={18} />
-          <Text style={styles.viewsText}>320K</Text>
+          <Text style={styles.viewsText}>{item.score}</Text>
+          <Text style={styles.viewsText2}>{item.label}</Text>
         </View>
       </TouchableOpacity>
-      {/* <Text
-        numberOfLines={2}
-        style={{marginTop: 15, color: '#000', fontFamily: 'Poppins-Medium'}}>
-        Performing his new song for the first time in history
-      </Text> */}
     </View>
   );
 };
@@ -65,17 +42,38 @@ export default function Photos({navigation}) {
 
       <FlatList
         data={[
-          require('../../assets/polo-g-photos-1.jpg'),
-          require('../../assets/polo-g-photos-2.jpg'),
-          require('../../assets/polo-g-photos-3.jpg'),
-          require('../../assets/polo-g-photos-4.jpg'),
-          require('../../assets/polo-g-photos-5.jpg'),
+          {
+            image: require('../../assets/chart.png'),
+            score: 3.7,
+            label: 'Privy Score',
+          },
+          {
+            image: require('../../assets/heart.png'),
+            score: 15,
+            label: 'Total Favourites',
+          },
+          {
+            image: require('../../assets/badge.png'),
+            score: 5,
+            label: 'Category Rank',
+          },
+          {
+            image: require('../../assets/rank.png'),
+            score: 19,
+            label: 'Overall Rank',
+          },
+          {
+            image: require('../../assets/flag.png'),
+            score: 6,
+            label: 'Reviews Flagged',
+          },
         ]}
         key={({item}) => item}
-        renderItem={({item}) => <Photo image={item} navigation={navigation} />}
+        renderItem={({item}) => <Photo item={item} navigation={navigation} />}
         horizontal
         showsHorizontalScrollIndicator={false}
-        style={{paddingHorizontal: 15}}
+        // style={{ padding: 15 }}
+        contentContainerStyle={{padding: 15}}
       />
     </View>
   );
@@ -84,6 +82,7 @@ export default function Photos({navigation}) {
 const styles = StyleSheet.create({
   container: {
     paddingVertical: 30,
+    paddingTop: 20,
   },
   header: {
     fontSize: 25,
@@ -99,14 +98,20 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     overflow: 'hidden',
     backgroundColor: '#fff',
-    borderColor: '#ddd',
-    borderWidth: 2,
+    borderColor: '#eee',
+    borderWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    paddingVertical: 25,
+    paddingBottom: 15,
+    elevation: 1,
+    margin: 5,
     // marginRight: 20,
   },
   image: {
-    width: 145,
-    height: 200,
-    resizeMode: 'cover',
+    width: 80,
+    height: 80,
+    resizeMode: 'contain',
   },
   topIcon: {
     // width: '100%',
@@ -119,18 +124,26 @@ const styles = StyleSheet.create({
     // alignItems: 'flex-end',
   },
   bottomText: {
-    position: 'absolute',
-    bottom: 5,
-    left: 10,
-    flexDirection: 'row',
-    justifyContent: 'center',
+    marginTop: 'auto',
+    justifyContent: 'flex-start',
     zIndex: 3,
+    paddingHorizontal: 10,
   },
   viewsText: {
-    color: '#fff',
+    textAlign: 'center',
+    color: '#222',
     fontFamily: 'Poppins-Medium',
-    fontSize: 12,
-    marginLeft: 5,
-    marginTop: 1,
+    fontSize: 25,
+    lineHeight: 29,
+    marginBottom: 5,
+    // marginTop: 1,
+  },
+  viewsText2: {
+    textAlign: 'center',
+    color: '#666',
+    fontFamily: 'Poppins-Medium',
+    fontSize: 14,
+    // marginLeft: 5,
+    // marginTop: 1,
   },
 });

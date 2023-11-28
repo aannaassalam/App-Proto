@@ -145,7 +145,7 @@ function GetReviews() {
 }
 const styles = StyleSheet.create({
   body: {
-    backgroundColor: '#5bb7d508',
+    backgroundColor: '#f6b19e10',
     flex: 1,
   },
   icon: {
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
     right: 0,
   },
   button: {
-    backgroundColor: '#5bb7d5',
+    backgroundColor: '#f6b19e',
     width: '30%',
     height: '80%',
     marginRight: 5,

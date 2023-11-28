@@ -4,7 +4,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import SettingStackNav from '../components/settingStackNav';
 import Feather from 'react-native-vector-icons/Feather';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
-import kate from '../assets/kate2.png';
+import kate from '../assets/payal.png';
 import instagram from '../assets/instagram3d.png';
 import snapchat from '../assets/snapchat3d.png';
 import facebook from '../assets/facebook3d.png';
@@ -23,7 +23,9 @@ function Settings() {
           }}>
           <View
             style={{
-              backgroundColor: '#f6b19e',
+              backgroundColor: '#f6b19e90',
+              //   backgroundColor: 'rgb(255 153 125 / 20%);',
+
               borderRadius: 15,
               height: 200,
               width: '50%',
@@ -89,16 +91,16 @@ function Settings() {
           }}>
           <Text
             style={{color: '#000', fontSize: 25, fontFamily: 'Poppins-Bold'}}>
-            Laura E.Jaggers
+            Payal Dhare
           </Text>
           <Text
             style={{
               ...styles.optionSubText,
-              marginTop: -13,
+              marginTop: -10,
               color: '#f45536',
               fontFamily: 'Poppins-Bold',
             }}>
-            Social Influencer
+            Professional Gamer
           </Text>
           <Text
             style={{
@@ -197,9 +199,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image: {
-    width: '70%',
+    width: '85%',
     height: '90%',
-    resizeMode: 'cover',
+    resizeMode: 'contain',
   },
   optionText: {
     color: '#333',
