@@ -64,6 +64,9 @@ function GetReviews() {
                 width: 50,
                 textAlign: 'center',
                 textTransform: 'uppercase',
+                color: '#aaa',
+                fontFamily: 'Poppins-Medium',
+                fontSize: 14,
               }}>
               OR
             </Text>
@@ -99,7 +102,14 @@ function GetReviews() {
             }}>
             <View style={{...styles.lineLeft, top: 38, width: '25%'}}></View>
             <View style={{...styles.lineRight, top: 38, width: '25%'}}></View>
-            <Text style={{...styles.text, marginVertical: 30}}>
+            <Text
+              style={{
+                ...styles.text,
+                marginVertical: 30,
+                color: '#aaa',
+                fontFamily: 'Poppins-Medium',
+                fontSize: 14,
+              }}>
               or share link via
             </Text>
           </View>
@@ -130,12 +140,16 @@ function GetReviews() {
               <Image style={{...styles.icon}} source={email} />
               <Text style={styles.iconText}>Email</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.iconContainer}>
+            <TouchableOpacity style={{...styles.iconContainer}}>
               <Image
-                style={{...styles.icon, width: 60, resizeMode: 'contain'}}
+                style={{
+                  ...styles.icon,
+                  width: 60,
+                  resizeMode: 'contain',
+                }}
                 source={link}
               />
-              <Text style={styles.iconText}>Others</Text>
+              <Text style={styles.iconText}>More</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -155,7 +169,7 @@ const styles = StyleSheet.create({
   lineLeft: {
     width: '40%',
     height: 1,
-    backgroundColor: '#333',
+    backgroundColor: '#ccc',
     position: 'absolute',
     top: 18,
     left: 0,
@@ -163,14 +177,14 @@ const styles = StyleSheet.create({
   lineRight: {
     width: '40%',
     height: 1,
-    backgroundColor: '#333',
+    backgroundColor: '#ccc',
     position: 'absolute',
     top: 18,
     right: 0,
   },
   button: {
     backgroundColor: '#f6b19e',
-    width: '30%',
+    width: '22%',
     height: '80%',
     marginRight: 5,
     display: 'flex',
@@ -197,9 +211,8 @@ const styles = StyleSheet.create({
   text: {
     fontWeight: 600,
     fontSize: 16,
-    color: '#666',
+    color: '#555',
     width: '80%',
-    fontWeight: '600',
     textAlign: 'center',
     textTransform: 'capitalize',
     lineHeight: 18,
@@ -221,18 +234,18 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'rgba(0,0,0,.05)',
     borderRadius: 10,
-    height: 55,
+    height: 50,
     shadowColor: 'rgba(0,0,0,.3)',
-    elevation: 15,
+    elevation: 10,
   },
   code: {
     color: '#333',
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: 'bold',
     letterSpacing: 1,
     paddingLeft: 15,
     overflow: 'hidden',
-    width: '65%',
+    width: '75%',
     textAlign: 'left',
   },
 

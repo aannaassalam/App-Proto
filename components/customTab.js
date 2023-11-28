@@ -4,14 +4,14 @@ import Octicons from 'react-native-vector-icons/Octicons';
 
 import {View, Text, StyleSheet, Pressable} from 'react-native';
 function CustomTab({state, navigation}) {
-  let col = state.index === 0 ? '#2A2A2C' : '#c3c4ca';
-  let textCol = state.index === 0 ? '#2A2A2C' : '#c3c4ca';
+  let col = state.index === 0 ? '#2A2A2C' : '#2A2A2C';
+  let textCol = state.index === 0 ? '#2A2A2C' : '#2A2A2C';
 
   return (
     <View
       style={{
         ...styles.tabar,
-        backgroundColor: state.index === 0 ? '#fefefe' : '#222328',
+        backgroundColor: state.index === 0 ? '#fefefe' : '#fefefe',
       }}>
       <Pressable
         style={styles.container}

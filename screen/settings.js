@@ -19,7 +19,7 @@ function Settings() {
           style={{
             flexDirection: 'row',
             paddingHorizontal: 15,
-            marginBottom: 5,
+            marginBottom: 15,
           }}>
           <View
             style={{
@@ -50,10 +50,10 @@ function Settings() {
                   fontSize: 23,
                   fontFamily: 'Poppins-Bold',
                 }}>
-                $5k
+                3.7
               </Text>
               <Text style={{...styles.optionSubText, marginTop: -10}}>
-                Earnings
+                Privy Score
               </Text>
             </View>
             <View style={{flexDirection: 'column'}}>
@@ -63,10 +63,10 @@ function Settings() {
                   fontSize: 23,
                   fontFamily: 'Poppins-Bold',
                 }}>
-                100+
+                15
               </Text>
               <Text style={{...styles.optionSubText, marginTop: -10}}>
-                Campaigns
+                Total Favourites
               </Text>
             </View>
             <View style={{flexDirection: 'column'}}>
@@ -76,10 +76,10 @@ function Settings() {
                   fontSize: 23,
                   fontFamily: 'Poppins-Bold',
                 }}>
-                $500
+                6
               </Text>
               <Text style={{...styles.optionSubText, marginTop: -10}}>
-                Current Balance
+                Reviews Flagged
               </Text>
             </View>
           </View>
@@ -96,16 +96,16 @@ function Settings() {
           <Text
             style={{
               ...styles.optionSubText,
-              marginTop: -10,
+              marginTop: -8,
               color: '#f45536',
               fontFamily: 'Poppins-Bold',
             }}>
-            Professional Gamer
+            Gaming
           </Text>
           <Text
             style={{
               ...styles.optionSubText,
-              marginTop: 2,
+              marginTop: 10,
             }}>
             Huda Kattan MUA & Blogger Turned Business War Instagram Love To
             Support Artists
@@ -117,7 +117,8 @@ function Settings() {
             paddingHorizontal: 15,
             width: '100%',
             justifyContent: 'space-between',
-            marginVertical: 20,
+            marginVertical: 30,
+            marginBottom: 50,
             // flexWrap: 'wrap',
           }}>
           <View style={styles.socialCard}>
@@ -146,6 +147,7 @@ function Settings() {
             flexDirection: 'column',
             paddingHorizontal: 15,
             marginTop: 10,
+            paddingBottom: 20,
           }}>
           <TouchableOpacity activeOpacity={0.8} style={styles.settingOption}>
             <View style={{flexDirection: 'column'}}>
@@ -188,7 +190,7 @@ function Settings() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffe6d830',
+    backgroundColor: 'rgba(255, 230, 216, 0.1)',
   },
   settingOption: {
     paddingVertical: 10,
@@ -205,11 +207,11 @@ const styles = StyleSheet.create({
   },
   optionText: {
     color: '#333',
-    fontSize: 18,
+    fontSize: 16,
     fontFamily: 'Poppins-SemiBold',
   },
   optionSubText: {
-    fontSize: 14,
+    fontSize: 12,
     marginTop: -5,
     fontFamily: 'Poppins-Medium',
   },

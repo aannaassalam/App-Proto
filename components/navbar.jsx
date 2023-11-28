@@ -32,7 +32,7 @@ export default function Navbar({scroll}) {
           color: '#000',
           display: isTransparent ? 'none' : 'flex',
         }}>
-        Polo G App
+        Privy Creators
       </Text>
       <View style={styles.row}>
         <View style={{position: 'relative'}}>
