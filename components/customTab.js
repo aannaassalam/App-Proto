@@ -19,17 +19,17 @@ function CustomTab({state, navigation}) {
         <Ionicons name="home-outline" size={20} color={col} />
         <Text style={{...styles.text, color: textCol}}>Home</Text>
       </Pressable>
-      <Pressable style={styles.container}>
+      {/* <Pressable style={styles.container}>
         <Ionicons name="location-outline" size={20} color={col} />
         <Text style={{...styles.text, color: textCol}}>Maps</Text>
-      </Pressable>
+      </Pressable> */}
       <Pressable style={styles.container}>
         <Ionicons name="stats-chart-outline" size={20} color={col} />
         <Text style={{...styles.text, color: textCol}}>Dashboard</Text>
       </Pressable>
       <Pressable
         style={styles.container}
-        onPress={() => navigation.navigate('reviews')}>
+        onPress={() => navigation.navigate('getReviews')}>
         <Octicons name="star" size={20} color={col} />
         <Text style={{...styles.text, color: textCol}}>Get Reviews</Text>
       </Pressable>

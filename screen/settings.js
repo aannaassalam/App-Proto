@@ -91,14 +91,19 @@ function Settings() {
             style={{color: '#000', fontSize: 25, fontFamily: 'Poppins-Bold'}}>
             Laura E.Jaggers
           </Text>
-          <Text style={{...styles.optionSubText, marginTop: -13}}>
+          <Text
+            style={{
+              ...styles.optionSubText,
+              marginTop: -13,
+              color: '#f45536',
+              fontFamily: 'Poppins-Bold',
+            }}>
             Social Influencer
           </Text>
           <Text
             style={{
-              color: '#000',
+              ...styles.optionSubText,
               marginTop: 2,
-              fontFamily: 'Poppins-SemiBold',
             }}>
             Huda Kattan MUA & Blogger Turned Business War Instagram Love To
             Support Artists
@@ -115,26 +120,31 @@ function Settings() {
           }}>
           <View style={styles.socialCard}>
             <Image source={youtube} style={styles.socialImage}></Image>
-            <Text>Youtube</Text>
-            <Text>100k</Text>
+            <Text style={{color: '#333', fontWeight: '600'}}>Youtube</Text>
+            <Text style={{color: '#111', fontWeight: '700'}}>100k</Text>
           </View>
           <View style={styles.socialCard}>
             <Image source={snapchat} style={styles.socialImage}></Image>
-            <Text>Snapchat</Text>
-            <Text>90k</Text>
+            <Text style={{color: '#333', fontWeight: '600'}}>Snapchat</Text>
+            <Text style={{color: '#111', fontWeight: '700'}}>90k</Text>
           </View>
           <View style={styles.socialCard}>
             <Image source={instagram} style={styles.socialImage}></Image>
-            <Text>Instagram</Text>
-            <Text>10k</Text>
+            <Text style={{color: '#333', fontWeight: '600'}}>Instagram</Text>
+            <Text style={{color: '#111', fontWeight: '700'}}>10k</Text>
           </View>
           <View style={styles.socialCard}>
             <Image source={facebook} style={styles.socialImage}></Image>
-            <Text>Facebook</Text>
-            <Text>80k</Text>
+            <Text style={{color: '#333', fontWeight: '600'}}>Facebook</Text>
+            <Text style={{color: '#111', fontWeight: '700'}}>80k</Text>
           </View>
         </View>
-        <View style={{flexDirection: 'column', paddingHorizontal: 15}}>
+        <View
+          style={{
+            flexDirection: 'column',
+            paddingHorizontal: 15,
+            marginTop: 10,
+          }}>
           <TouchableOpacity activeOpacity={0.8} style={styles.settingOption}>
             <View style={{flexDirection: 'column'}}>
               <Text style={styles.optionText}>Account Settings</Text>
@@ -176,7 +186,7 @@ function Settings() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fafafa',
+    backgroundColor: '#ffe6d830',
   },
   settingOption: {
     paddingVertical: 10,
@@ -206,12 +216,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '23%',
     padding: 5,
-    backgroundColor: '#fff',
+    backgroundColor: '#fefefe',
     borderRadius: 15,
-    shadowColor: '#333',
-    shadowOffset: {width: 0, height: 2},
-    shadowOpacity: 0.3,
-    shadowRadius: 10,
+    // shadowColor: '#333',
+    // shadowOffset: {width: 0, height: 2},
+    // shadowOpacity: 0.3,
+    // shadowRadius: 10,
     elevation: 7,
   },
   socialImage: {width: '50%', resizeMode: 'contain', height: 50},
