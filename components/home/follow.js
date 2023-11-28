@@ -5,7 +5,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 export default function Follow() {
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Follow Polo G Everywhere</Text>
+      <Text style={styles.header}>Verified Platforms</Text>
       <View style={styles.row}>
         <Image
           source={require('../../assets/youtube.png')}
@@ -94,6 +94,7 @@ const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 15,
     paddingVertical: 40,
+    paddingTop: 10,
   },
   header: {
     fontSize: 25,

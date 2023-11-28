@@ -73,12 +73,12 @@ export default function Home({navigation}) {
           {/* <HallOfFame /> */}
           <Photos navigation={navigation} />
           <Music />
-          <ShopMerch />
-          <MusicAlbums />
-          <MusicVideos />
+          {/* <ShopMerch /> */}
+          {/* <MusicAlbums /> */}
+          {/* <MusicVideos /> */}
           <Follow />
-          <Gallery />
-          <Footer navigation={navigation} />
+          {/* <Gallery /> */}
+          {/* <Footer navigation={navigation} /> */}
         </View>
       </Animated.ScrollView>
     </>

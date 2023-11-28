@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import {View, StyleSheet, Text, Image, Pressable} from 'react-native';
-import music1 from '../assets/poloGmusic-1.jpg';
-import music2 from '../assets/poloGmusic-2.jpg';
-import music3 from '../assets/poloGmusic-3.jpg';
+import blog1 from '../assets/blog1.png';
+import blog2 from '../assets/blog2.png';
+import blog3 from '../assets/blog3.png';
+import blog4 from '../assets/blog4.png';
+import blog5 from '../assets/blog5.png';
 import music21 from '../assets/poloGmusic2-1.jpg';
 import music22 from '../assets/poloGmusic2-2.jpg';
 import music23 from '../assets/poloGmusic2-3.jpg';
@@ -21,9 +23,11 @@ const MusicCard = ({img, name, desc, duration}) => {
     <View style={styles.card}>
       <Image style={styles.cardImage} source={img}></Image>
       <View style={styles.details}>
-        <Text style={styles.name}>{name}</Text>
+        <Text style={styles.name} numberOfLines={2}>
+          {name}
+        </Text>
         <View style={{flexDirection: 'row'}}>
-          <Text
+          {/* <Text
             style={{
               ...styles.desc,
               width: '80%',
@@ -32,7 +36,7 @@ const MusicCard = ({img, name, desc, duration}) => {
             numberOfLines={1}>
             {desc}
           </Text>
-          <Text style={{...styles.desc, marginLeft: 'auto'}}>{duration}</Text>
+          <Text style={{...styles.desc, marginLeft: 'auto'}}>{duration}</Text> */}
           <View style={styles.line}></View>
         </View>
       </View>
@@ -64,8 +68,8 @@ function Music() {
   });
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>Music</Text>
-      <View style={styles.tabs}>
+      <Text style={styles.heading}>Platform News</Text>
+      {/* <View style={styles.tabs}>
         <Pressable
           onPress={() => {
             list2Offset.value = withTiming(-200, {
@@ -106,7 +110,7 @@ function Music() {
             Latest Release
           </Text>
         </Pressable>
-      </View>
+      </View> */}
       <View
         onLayout={event => width(event)}
         style={{
@@ -114,37 +118,37 @@ function Music() {
         }}>
         <Animated.View style={[styles.list, animatedStyles1]}>
           <MusicCard
-            name="Guitar Loop"
-            img={music1}
-            desc="Guitar Loop Kit/ Sample Pa..."
-            duration="2:55"
+            name="What Are Some Ways You Can Improve Your Personal Brand?"
+            img={blog1}
+            desc=""
+            duration=""
           />
           <MusicCard
-            name="[Free] NoCap"
-            img={music2}
+            name="11 Benefits Of User Generated Content"
+            img={blog2}
             desc="[Free] NoCap Type Beat-.."
             duration="2:55"
           />
           <MusicCard
-            name="Polo G"
-            img={music3}
+            name="How To Become A Micro Influencer"
+            img={blog3}
             desc="Polo G ft.Future - No Time...."
             duration="0:25"
           />
           <MusicCard
-            name="Polo G"
-            img={music3}
+            name="Reputation Management for Individuals"
+            img={blog4}
             desc="Polo G ft.Future - No Time...."
             duration="3:00"
           />
           <MusicCard
-            name="Polo G"
-            img={music3}
+            name="How to Get More Likes on Instagram"
+            img={blog5}
             desc="Polo G ft.Future - No Time...."
             duration="3:00"
           />
         </Animated.View>
-        <Animated.View style={[styles.list, animatedStyles2, styles.transform]}>
+        {/* <Animated.View style={[styles.list, animatedStyles2, styles.transform]}>
           <MusicCard
             name="Polo G"
             img={music21}
@@ -175,7 +179,7 @@ function Music() {
             desc="DDG ft. Polo G & NLE Chopp.."
             duration="2:55"
           />
-        </Animated.View>
+        </Animated.View> */}
       </View>
       <View
         style={{
@@ -191,7 +195,7 @@ function Music() {
             fontSize: 16,
             fontFamily: 'Poppins-SemiBold',
           }}>
-          More Music
+          More News
         </Text>
         <Feather name="chevron-right" size={25} color="#959295" />
       </View>

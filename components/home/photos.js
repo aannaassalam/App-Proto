@@ -44,27 +44,27 @@ export default function Photos({navigation}) {
         data={[
           {
             image: require('../../assets/chart.png'),
-            score: 3,
+            score: 3.7,
             label: 'Privy Score',
           },
           {
             image: require('../../assets/heart.png'),
-            score: 3,
+            score: 15,
             label: 'Total Favourites',
           },
           {
             image: require('../../assets/badge.png'),
-            score: 3,
+            score: 5,
             label: 'Category Rank',
           },
           {
             image: require('../../assets/rank.png'),
-            score: 3,
+            score: 19,
             label: 'Overall Rank',
           },
           {
-            image: require('../../assets/chart.png'),
-            score: 3,
+            image: require('../../assets/flag.png'),
+            score: 6,
             label: 'Reviews Flagged',
           },
         ]}
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Medium',
     fontSize: 25,
     lineHeight: 29,
-    // marginLeft: 5,
+    marginBottom: 5,
     // marginTop: 1,
   },
   viewsText2: {
