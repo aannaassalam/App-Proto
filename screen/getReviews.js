@@ -23,7 +23,7 @@ function GetReviews() {
             width: '100%',
             alignItems: 'center',
             justifyContent: 'center',
-
+            marginBottom: 20,
             ...styles.body,
           }}>
           <Image style={styles.illustration} source={refer} />
@@ -195,10 +195,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   illustration: {
-    width: '45%',
-    height: 170,
-    resizeMode: 'contain',
-    marginBottom: 10,
+    width: '120%',
+    height: 200,
+    resizeMode: 'cover',
+    marginVertical: 50,
   },
   heading: {
     color: '#1003A4',
