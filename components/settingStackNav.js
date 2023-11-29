@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     margin: 5,
     marginBottom: 10,
-    backgroundColor: 'transparent',
+    // backgroundColor: 'transparent',
   },
   heading: {
     fontSize: 18,
