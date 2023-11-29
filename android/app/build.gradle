@@ -112,10 +112,12 @@ android {
     }
     signingConfigs {
         release{
-            storeFile file('salsaalKey.keystore')
-      storePassword 'salsaalshahid'
-      keyAlias 'myKey'
-      keyPassword 'salsaalshahid'
+            release {
+      storeFile file('privy.keystore')
+      storePassword '12345678'
+      keyAlias 'privy'
+      keyPassword '12345678'
+    }
         }
         debug {
             storeFile file('debug.keystore')
