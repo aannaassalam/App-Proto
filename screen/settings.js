@@ -6,7 +6,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import kate from '../assets/payal.png';
 import instagram from '../assets/instagram3d.png';
-import snapchat from '../assets/snapchat.png';
+import snapchat from '../assets/snapchat3d.png';
 import facebook from '../assets/facebook3d.png';
 import youtube from '../assets/youtube3d.png';
 

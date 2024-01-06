@@ -35,7 +35,7 @@ function GetReviews() {
 
   return (
     <SafeAreaView style={styles.body}>
-      <ScrollView style={styles.body}>
+      <ScrollView>
         <SettingStackNav heading="Get Reviews" />
         <View
           style={{
@@ -193,7 +193,7 @@ function GetReviews() {
 }
 const styles = StyleSheet.create({
   body: {
-    backgroundColor: '#f6b19e10',
+    backgroundColor: 'rgba(255, 230, 216, 0.1)',
     flex: 1,
   },
   icon: {
@@ -217,7 +217,7 @@ const styles = StyleSheet.create({
     right: 0,
   },
   button: {
-    backgroundColor: '#f6b19e',
+    backgroundColor: '#ff9679',
     width: '22%',
     height: '80%',
     marginRight: 5,

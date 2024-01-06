@@ -11,10 +11,13 @@ const Tab = createBottomTabNavigator();
 export default function TabNavigator() {
   const customTab = props => <CustomTab {...props} />;
   return (
-    <Tab.Navigator screenOptions={{headerShown: false}} tabBar={customTab}>
+    <Tab.Navigator
+      screenOptions={{headerShown: false}}
+      tabBar={customTab}
+      initialRouteName="home">
+      <Tab.Screen name="home" component={Home} />
       <Tab.Screen name="getReviews" component={GetReviews} />
       <Tab.Screen name="settingsStack" component={SettingsStack} />
-      <Tab.Screen name="home" component={Home} />
       {/* <Tab.Screen name="photos" component={Photo} /> */}
     </Tab.Navigator>
   );

@@ -4,8 +4,9 @@ import Octicons from 'react-native-vector-icons/Octicons';
 
 import {View, Text, StyleSheet, Pressable} from 'react-native';
 function CustomTab({state, navigation}) {
-  let col = state.index === 0 ? '#2A2A2C' : '#2A2A2C';
-  let textCol = state.index === 0 ? '#2A2A2C' : '#2A2A2C';
+  console.log(state.index);
+  // let col = state.index === 0 ? '#ff9679' : '#2A2A2C';
+  // let textCol = state.index === 0 ? '#ff9679' : '#2A2A2C';
 
   return (
     <View
@@ -16,28 +17,58 @@ function CustomTab({state, navigation}) {
       <Pressable
         style={styles.container}
         onPress={() => navigation.navigate('home')}>
-        <Ionicons name="home-outline" size={20} color={col} />
-        <Text style={{...styles.text, color: textCol}}>Home</Text>
+        <Ionicons
+          name={state.index === 0 ? 'home' : 'home-outline'}
+          size={20}
+          color={state.index === 0 ? '#ff9679' : '#2a2a2c'}
+        />
+        <Text
+          style={{
+            ...styles.text,
+            color: state.index === 0 ? '#ff9679' : '#2a2a2c',
+          }}>
+          Home
+        </Text>
       </Pressable>
       {/* <Pressable style={styles.container}>
         <Ionicons name="location-outline" size={20} color={col} />
         <Text style={{...styles.text, color: textCol}}>Maps</Text>
       </Pressable> */}
       <Pressable style={styles.container}>
-        <Ionicons name="stats-chart-outline" size={20} color={col} />
-        <Text style={{...styles.text, color: textCol}}>Dashboard</Text>
+        <Ionicons name="stats-chart-outline" size={20} color="#2a2a2c" />
+        <Text style={{...styles.text, color: '#2a2a2c'}}>Dashboard</Text>
       </Pressable>
       <Pressable
         style={styles.container}
         onPress={() => navigation.navigate('getReviews')}>
-        <Octicons name="star" size={20} color={col} />
-        <Text style={{...styles.text, color: textCol}}>Get Reviews</Text>
+        <Octicons
+          name={state.index === 1 ? 'star-fill' : 'star'}
+          size={20}
+          color={state.index === 1 ? '#ff9679' : '#2a2a2c'}
+        />
+        <Text
+          style={{
+            ...styles.text,
+            color: state.index === 1 ? '#ff9679' : '#2a2a2c',
+          }}>
+          Get Reviews
+        </Text>
       </Pressable>
       <Pressable
         style={styles.container}
         onPress={() => navigation.navigate('settingsStack')}>
-        <Ionicons name="settings-outline" size={20} color={col} />
-        <Text style={{...styles.text, color: textCol}}>Settings</Text>
+        <Ionicons
+          name={state.index === 2 ? 'settings' : 'settings-outline'}
+          size={20}
+          color={state.index === 2 ? '#ff9679' : '#2a2a2c'}
+        />
+        <Text
+          style={{
+            ...styles.text,
+            color: state.index === 2 ? '#ff9679' : '#2a2a2c',
+          }}>
+          Settings
+        </Text>
       </Pressable>
     </View>
   );
@@ -50,11 +81,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     flexDirection: 'row',
     borderTopWidth: 1,
+    backgroundColor: '#fff',
     borderTopColor: '#eee',
   },
   container: {
     flexDirection: 'column',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   text: {
     color: '#C3C4Ca',
