@@ -18,31 +18,58 @@ import Animated, {
   withSpring,
   withTiming,
 } from 'react-native-reanimated';
+import {useNavigation} from '@react-navigation/native';
+
+const data = [
+  {
+    image: '../assets/blog1.png',
+    title: 'What are some ways you can improve your Personal',
+    text: '',
+  },
+  {
+    image: '../assets/blog2.png',
+    title: '11 Benefits of user generated content',
+    text: '',
+  },
+  {
+    image: '../assets/blog3.png',
+    title: 'How to become a micro influencer',
+    text: '',
+  },
+  {
+    image: '../assets/blog4.png',
+    title: 'Reputation management for individuals',
+    text: '',
+  },
+  {
+    image: '../assets/blog5.png',
+    title: 'How to get more likes on instagram',
+    text: '',
+  },
+  {
+    image: '../assets/blog1.png',
+    title: 'What are some ways you can improve your Personal',
+    text: '',
+  },
+];
+
 const MusicCard = ({img, name, desc, duration}) => {
+  const navigation = useNavigation();
+
   return (
-    <View style={styles.card}>
-      <Image style={styles.cardImage} source={img}></Image>
-      <View style={styles.details}>
-        <Text style={styles.name} numberOfLines={2}>
-          {name}
-        </Text>
-        <View style={{flexDirection: 'row'}}>
-          {/* <Text
-            style={{
-              ...styles.desc,
-              width: '80%',
-              overflow: 'hidden',
-            }}
-            numberOfLines={1}>
-            {desc}
-          </Text>
-          <Text style={{...styles.desc, marginLeft: 'auto'}}>{duration}</Text> */}
-          <View style={styles.line}></View>
-        </View>
-      </View>
-    </View>
+    <Pressable
+      style={styles.card}
+      onPress={() =>
+        navigation.navigate('blog', {
+          img: img,
+          heading: name,
+        })
+      }>
+      <Image style={styles.cardImage} source={img} resizeMode="cover"></Image>
+    </Pressable>
   );
 };
+
 function Music() {
   const [moveValue, setmoveValue] = useState(0);
   const [active, setactive] = useState(0);
@@ -114,40 +141,46 @@ function Music() {
       <View
         onLayout={event => width(event)}
         style={{
-          flexDirection: 'row',
+          flexDirection: 'column',
         }}>
-        <Animated.View style={[styles.list, animatedStyles1]}>
-          <MusicCard
-            name="What Are Some Ways You Can Improve Your Personal Brand?"
-            img={blog1}
-            desc=""
-            duration=""
-          />
-          <MusicCard
-            name="11 Benefits Of User Generated Content"
-            img={blog2}
-            desc="[Free] NoCap Type Beat-.."
-            duration="2:55"
-          />
-          <MusicCard
-            name="How To Become A Micro Influencer"
-            img={blog3}
-            desc="Polo G ft.Future - No Time...."
-            duration="0:25"
-          />
-          <MusicCard
-            name="Reputation Management for Individuals"
-            img={blog4}
-            desc="Polo G ft.Future - No Time...."
-            duration="3:00"
-          />
-          <MusicCard
-            name="How to Get More Likes on Instagram"
-            img={blog5}
-            desc="Polo G ft.Future - No Time...."
-            duration="3:00"
-          />
-        </Animated.View>
+        {/* <Animated.View style={[styles.list, animatedStyles1]}> */}
+        <View style={styles.row}>
+          <View style={styles.cardOne}>
+            <MusicCard
+              img={blog1}
+              name="What are some ways you can improve your Personal"
+            />
+          </View>
+          <View style={styles.cardTwo}>
+            <MusicCard
+              img={blog2}
+              name="11 Benefits of user generated content"
+            />
+          </View>
+        </View>
+        <View style={styles.row}>
+          <View style={styles.cardTwo}>
+            <MusicCard img={blog3} name="How to become a micro influencer" />
+          </View>
+          <View style={styles.cardOne}>
+            <MusicCard
+              img={blog4}
+              name="Reputation management for individuals"
+            />
+          </View>
+        </View>
+        <View style={styles.row}>
+          <View style={styles.cardOne}>
+            <MusicCard img={blog5} name="How to get more likes on instagram" />
+          </View>
+          <View style={styles.cardTwo}>
+            <MusicCard
+              img={blog1}
+              name="What are some ways you can improve your Personal"
+            />
+          </View>
+        </View>
+        {/* </Animated.View> */}
         {/* <Animated.View style={[styles.list, animatedStyles2, styles.transform]}>
           <MusicCard
             name="Polo G"
@@ -248,14 +281,11 @@ const styles = StyleSheet.create({
     // width: '100%',
   },
   card: {
-    // width: '100%',
-    flexDirection: 'row',
-    marginVertical: 7,
-    alignItems: 'center',
+    width: '100%',
   },
   cardImage: {
-    width: 110,
-    height: 60,
+    width: '100%',
+    height: '100%',
     resizeMode: 'cover',
     // backgroundColor: 'red',
     marginRight: 10,
@@ -284,6 +314,26 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: '600',
     fontFamily: 'Poppins-SemiBold',
+  },
+  row: {
+    display: 'flex',
+    flexDirection: 'row',
+    gap: 10,
+    height: 150,
+    width: '100%',
+    marginBottom: 10,
+  },
+  cardOne: {
+    flex: 0.6,
+    borderRadius: 5,
+    overflow: 'hidden',
+    elevation: 1,
+  },
+  cardTwo: {
+    flex: 0.4,
+    borderRadius: 5,
+    overflow: 'hidden',
+    elevation: 1,
   },
 });
 export default Music;

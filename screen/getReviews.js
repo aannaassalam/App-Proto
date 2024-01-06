@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
+import {Image, Pressable, Share, StyleSheet, Text, View} from 'react-native';
 import {
   ScrollView,
   TextInput,
@@ -14,6 +14,25 @@ import refer from '../assets/refer.png';
 import SettingStackNav from '../components/settingStackNav';
 
 function GetReviews() {
+  const onShare = async () => {
+    try {
+      const result = await Share.share({
+        message: 'https://privy.reviews/john/?referral_code=1469',
+      });
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          // shared with activity type of result.activityType
+        } else {
+          // shared
+        }
+      } else if (result.action === Share.dismissedAction) {
+        // dismissed
+      }
+    } catch (error) {
+      Alert.alert(error.message);
+    }
+  };
+
   return (
     <SafeAreaView style={styles.body}>
       <ScrollView style={styles.body}>
@@ -121,7 +140,22 @@ function GetReviews() {
               justifyContent: 'space-between',
               alignItems: 'flex-end',
             }}>
-            <TouchableOpacity style={styles.iconContainer}>
+            <Pressable
+              style={{
+                ...styles.button,
+                width: '100%',
+                height: 55,
+                marginRight: 0,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+              onPress={onShare}
+              android_ripple={{color: 'transparent', borderless: true}}>
+              <Text style={{color: '#fff', fontSize: 18}}>
+                Share with other apps
+              </Text>
+            </Pressable>
+            {/* <TouchableOpacity style={styles.iconContainer}>
               <Image style={styles.icon} source={messenger} />
               <Text style={styles.iconText}>Messenger</Text>
             </TouchableOpacity>
@@ -150,7 +184,7 @@ function GetReviews() {
                 source={link}
               />
               <Text style={styles.iconText}>More</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
           </View>
         </View>
       </ScrollView>
